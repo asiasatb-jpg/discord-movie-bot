@@ -1,0 +1,51 @@
+{
+  "common": {
+    "movie": "Film",
+    "rating": "Rating",
+    "year": "Tahun",
+    "genres": "Genre",
+    "duration": "Durasi",
+    "synopsis": "Sinopsis",
+    "cast": "Pemeran",
+    "directors": "Sutradara",
+    "trailer": "Trailer",
+    "watch": "Nonton",
+    "favorite": "Favorit",
+    "watchlist": "Watchlist",
+    "where_to_watch": "Tempat Nonton Resmi",
+    "open_official": "Buka Sumber Resmi",
+    "page": "Halaman",
+    "of": "dari",
+    "loading": "Sedang memproses...",
+    "availability_unavailable": "Informasi ketersediaan platform streaming belum tersedia untuk wilayah ini."
+  },
+  "errors": {
+    "movie_not_found": "Film tidak ditemukan. Silakan periksa kembali judul yang dicari.",
+    "movie_not_found_query": "Tidak dapat menemukan film dengan kata kunci: **{query}**",
+    "database_error": "Terjadi kesalahan saat menghubungi database film.",
+    "rate_limit_exceeded": "⏳ Terlalu banyak permintaan. Silakan coba lagi dalam **{seconds}** detik.",
+    "invalid_url": "URL tidak valid atau tidak aman.",
+    "unsupported_platform": "Maaf, platform streaming ini belum didukung atau bukan sumber resmi yang diizinkan.",
+    "admin_only": "Perintah ini hanya dapat dijalankan oleh Administrator bot.",
+    "generic_error": "Terjadi kesalahan internal. Silakan coba lagi nanti."
+  },
+  "favorite": {
+    "added": "✅ **{title}** berhasil ditambahkan ke daftar Favorit kamu!",
+    "removed": "🗑️ **{title}** berhasil dihapus dari daftar Favorit kamu.",
+    "already_exists": "ℹ️ **{title}** sudah ada di daftar Favorit kamu.",
+    "empty": "Kamu belum memiliki film favorit. Gunakan `/favorite add` atau klik tombol ❤️ pada info film!",
+    "list_title": "Daftar Film Favorit Kamu"
+  },
+  "watchlist": {
+    "added": "✅ **{title}** berhasil ditambahkan ke Watchlist kamu!",
+    "removed": "🗑️ **{title}** berhasil dihapus dari Watchlist kamu.",
+    "already_exists": "ℹ️ **{title}** sudah ada di Watchlist kamu.",
+    "empty": "Watchlist kamu masih kosong. Gunakan `/watchlist add` atau klik tombol 📚 pada info film!",
+    "list_title": "Watchlist Kamu"
+  },
+  "history": {
+    "cleared": "✅ Riwayat pencarian kamu berhasil dibersihkan.",
+    "empty": "Kamu belum memiliki riwayat pencarian.",
+    "recent_title": "Riwayat Pencarian Terakhir"
+  }
+}

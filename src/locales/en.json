@@ -1,0 +1,51 @@
+{
+  "common": {
+    "movie": "Movie",
+    "rating": "Rating",
+    "year": "Year",
+    "genres": "Genres",
+    "duration": "Duration",
+    "synopsis": "Synopsis",
+    "cast": "Cast",
+    "directors": "Director",
+    "trailer": "Trailer",
+    "watch": "Watch",
+    "favorite": "Favorite",
+    "watchlist": "Watchlist",
+    "where_to_watch": "Where to Watch (Official)",
+    "open_official": "Open Official Page",
+    "page": "Page",
+    "of": "of",
+    "loading": "Processing...",
+    "availability_unavailable": "Availability information is currently unavailable for this region."
+  },
+  "errors": {
+    "movie_not_found": "Movie not found. Please verify the title.",
+    "movie_not_found_query": "Could not find any movie matching: **{query}**",
+    "database_error": "An error occurred while connecting to the movie database.",
+    "rate_limit_exceeded": "⏳ Too many requests. Please try again in **{seconds}** seconds.",
+    "invalid_url": "Invalid or unsafe URL provided.",
+    "unsupported_platform": "Sorry, this platform is currently not supported or not recognized as an official legal source.",
+    "admin_only": "This command can only be executed by Bot Administrators.",
+    "generic_error": "An unexpected error occurred. Please try again later."
+  },
+  "favorite": {
+    "added": "✅ **{title}** added to your Favorites!",
+    "removed": "🗑️ **{title}** removed from your Favorites.",
+    "already_exists": "ℹ️ **{title}** is already in your Favorites.",
+    "empty": "You have no favorite movies yet. Use `/favorite add` or click the ❤️ button on any movie!",
+    "list_title": "Your Favorite Movies"
+  },
+  "watchlist": {
+    "added": "✅ **{title}** added to your Watchlist!",
+    "removed": "🗑️ **{title}** removed from your Watchlist.",
+    "already_exists": "ℹ️ **{title}** is already in your Watchlist.",
+    "empty": "Your watchlist is empty. Use `/watchlist add` or click the 📚 button on any movie!",
+    "list_title": "Your Watchlist"
+  },
+  "history": {
+    "cleared": "✅ Your search history has been cleared.",
+    "empty": "You have no search history yet.",
+    "recent_title": "Recent Searches"
+  }
+}
