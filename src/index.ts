@@ -3,6 +3,7 @@ import { env } from './config/env.config.js';
 import { getCommandsCollection } from './commands/index.js';
 import { handleReady } from './events/ready.js';
 import { handleInteractionCreate } from './events/interactionCreate.js';
+import { handleMessageCreate } from './events/messageCreate.js';
 import { handleError } from './events/error.js';
 import { logger } from './utils/logger.js';
 import { prisma } from './database/prisma.js';
@@ -12,6 +13,7 @@ const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
   ],
   partials: [Partials.Channel, Partials.Message],
 });
@@ -23,6 +25,7 @@ logger.info(`Loaded ${commands.size} slash commands.`);
 // Register Event Handlers
 client.once('ready', () => handleReady(client));
 client.on('interactionCreate', (interaction) => handleInteractionCreate(interaction, commands));
+client.on('messageCreate', (message) => handleMessageCreate(message));
 client.on('error', handleError);
 
 // Graceful Shutdown
