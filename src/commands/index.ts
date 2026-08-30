@@ -8,6 +8,7 @@ import { watchCommand } from './movie/watch.command.js';
 import { infoCommand } from './movie/info.command.js';
 import { trailerCommand } from './movie/trailer.command.js';
 import { platformCommand } from './movie/platform.command.js';
+import { streamCommand } from './movie/stream.command.js';
 
 // Discovery commands
 import { randomCommand } from './discovery/random.command.js';
@@ -38,6 +39,7 @@ export const commandsList: SlashCommand[] = [
   infoCommand,
   trailerCommand,
   platformCommand,
+  streamCommand,
   randomCommand,
   trendingCommand,
   topCommand,
