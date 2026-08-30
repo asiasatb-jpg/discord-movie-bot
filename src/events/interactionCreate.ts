@@ -4,6 +4,10 @@ import {
   ChatInputCommandInteraction,
   AutocompleteInteraction,
   ButtonInteraction,
+  GuildMember,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
 } from 'discord.js';
 import { SlashCommand } from '../types/command.types.js';
 import { rateLimiter } from '../middleware/rate-limiter.js';
@@ -47,6 +51,47 @@ export async function handleInteractionCreate(
 
       if (buttonInt.customId.startsWith('watch_info_')) {
         await handleWatchInfoButton(buttonInt);
+        return;
+      }
+
+      if (buttonInt.customId.startsWith('stream_voice_')) {
+        const member = buttonInt.member as GuildMember;
+        const voiceChannel = member?.voice?.channel;
+
+        if (!voiceChannel) {
+          await buttonInt.reply({
+            content: '⚠️ Kamu harus masuk ke salah satu Voice Channel (seperti **Movie 1**) terlebih dahulu untuk mulai nonton bareng!',
+            ephemeral: true,
+          });
+          return;
+        }
+
+        try {
+          const invite = await (voiceChannel as any).createInvite({
+            targetApplication: '880218394199220334',
+            targetType: 2, // InviteTargetType.EmbeddedApplication
+            maxAge: 3600,
+          });
+
+          const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
+            new ButtonBuilder()
+              .setLabel(`▶ Buka Layar Nonton di ${voiceChannel.name}`)
+              .setStyle(ButtonStyle.Link)
+              .setURL(invite.url)
+          );
+
+          await buttonInt.reply({
+            content: `🍿 Sesi Nonton Bareng di channel **${voiceChannel.name}** siap! Klik tombol di bawah untuk langsung membuka pemutar video:`,
+            components: [row],
+            ephemeral: true,
+          });
+        } catch (err: any) {
+          logger.error({ err: err.message }, 'Error launching stream from button');
+          await buttonInt.reply({
+            content: 'Gagal membuat sesi streaming. Pastikan bot memiliki izin Create Invite di voice channel tersebut.',
+            ephemeral: true,
+          });
+        }
         return;
       }
 

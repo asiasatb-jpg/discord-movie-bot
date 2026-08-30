@@ -22,18 +22,27 @@ export class ButtonHelper {
         .setStyle(ButtonStyle.Primary)
     );
 
-    // 2. Official Trailer Button (Link Button if available)
+    // 2. Stream / Watch Together in Voice Channel Button
+    row.addComponents(
+      new ButtonBuilder()
+        .setCustomId(`stream_voice_${movie.id}`)
+        .setLabel('Nonton Bareng')
+        .setEmoji('📺')
+        .setStyle(ButtonStyle.Success)
+    );
+
+    // 3. Official Trailer Button (Link Button if available)
     if (movie.officialTrailerUrl) {
       row.addComponents(
         new ButtonBuilder()
-          .setLabel('Tonton Trailer')
+          .setLabel('Trailer')
           .setEmoji(EMOJIS.TRAILER)
           .setStyle(ButtonStyle.Link)
           .setURL(movie.officialTrailerUrl)
       );
     }
 
-    // 3. Add to Favorite Button
+    // 4. Add to Favorite Button
     row.addComponents(
       new ButtonBuilder()
         .setCustomId(`fav_add_${movie.id}`)
